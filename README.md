@@ -4,6 +4,21 @@ A GitHub Action for setting up the [UiPath CLI](https://docs.uipath.com/cicd-int
 
 **Note on compatibility:** This action is compatible with both Windows and Ubuntu runners. UiPath offers two separate command line tools for the different operating systems, UiPath.CLI and UiPath.CLI.Windows installed on Ubuntu and Windows respectively. These have different capabilities in terms of project compatibility, noted in the [Compatiblity Matrix sections of this documentation page](https://docs.uipath.com/cicd-integrations/standalone/2024.10/user-guide/compatibility-matrix)
 
+> [!WARNING]
+> This action will not support use of UiPath CLI versions beyond 2025.10.x since UiPath now offers a simpler way of installing the CLI as a dotnet tool. See the code blocks below for examples on how to do this.
+
+**Windows Runners**
+
+```sh
+dotnet tool install --global UiPath.CLI.Windows --version 2025.10.5
+```
+
+**Linux Runners**
+
+```sh
+dotnet tool install --global UiPath.CLI.Linux --version 2025.10.5
+```
+
 ## How to use
 
 Copy one of the example usage snippets from the sections below into your GitHub Actions workflow.
